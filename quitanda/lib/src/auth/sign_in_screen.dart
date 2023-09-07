@@ -1,6 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:quitanda/src/auth/components/custom_text_field.dart';
+import 'package:quitanda/src/auth/sign_up_screen.dart';
+import 'package:quitanda/src/base/base_screen.dart';
 import 'package:quitanda/src/config/custom_colors.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -22,7 +24,7 @@ class SignInScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text.rich(TextSpan(
+                    const Text.rich(TextSpan(
                         style: TextStyle(fontSize: 40, color: Colors.white),
                         children: [
                           TextSpan(
@@ -88,7 +90,12 @@ class SignInScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute(builder: (c) {
+                            return BaseScreen();
+                          }));
+                        },
                         child: const Text(
                           'Entrar',
                           style: TextStyle(fontSize: 18, color: Colors.white),
@@ -115,10 +122,10 @@ class SignInScreen extends StatelessWidget {
                             thickness: 2,
                           ),
                         ),
-                        Padding(
+                        const Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 15),
-                          child: const Text('Ou',
-                              style: TextStyle(color: Colors.grey)),
+                          child:
+                              Text('Ou', style: TextStyle(color: Colors.grey)),
                         ),
                         Expanded(
                           child: Divider(
@@ -138,7 +145,13 @@ class SignInScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(30),
                                   side: const BorderSide(
                                       width: 1, color: Colors.green))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (c) {
+                                return SignUpScreen();
+                              },
+                            ));
+                          },
                           child: const Text(
                             'Criar uma conta',
                             style: TextStyle(fontSize: 18, color: Colors.green),
