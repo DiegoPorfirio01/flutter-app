@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:quitanda/src/auth/components/custom_text_field.dart';
+import 'package:quitanda/src/pages/auth/components/custom_text_field.dart';
 import 'package:quitanda/src/config/custom_colors.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -54,7 +54,7 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         const CustomTextField(
                             icon: Icons.person, label: 'Nome'),
-                        CustomTextField(
+                         CustomTextField(
                             icon: Icons.phone,
                             label: 'Celular',
                             inputFormatters: [phoneFormatter]),

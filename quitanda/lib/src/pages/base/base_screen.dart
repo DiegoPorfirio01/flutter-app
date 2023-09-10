@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quitanda/src/pages/home/home_tab.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({super.key});
@@ -19,9 +20,7 @@ class _BaseScreenState extends State<BaseScreen> {
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         children: [
-          Container(
-            color: Colors.red,
-          ),
+          const HomeTab(),
           Container(
             color: Colors.blue,
           ),
@@ -35,7 +34,7 @@ class _BaseScreenState extends State<BaseScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
-        onTap: (index){
+        onTap: (index) {
           setState(() {
             currentIndex = index;
             pageController.jumpToPage(index);
