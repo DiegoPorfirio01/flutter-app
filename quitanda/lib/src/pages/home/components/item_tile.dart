@@ -22,7 +22,7 @@ class ItemTile extends StatelessWidget {
           onTap: () => Navigator.of(context).push(MaterialPageRoute(
             builder: (c) {
               return ProductScreen(
-               item: item,
+                item: item,
               );
             },
           )),
@@ -32,38 +32,46 @@ class ItemTile extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
-            child: Column(
-              children: [
-                Image.asset(item.imgUrl),
-                Text(
-                  item.itemName,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Hero(
+                      tag: item.imgUrl,
+                      child: Image.asset(item.imgUrl),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: Row(
-                    children: [
-                      Text(
-                        utils.priceToCurrent(item.price),
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                          color: CustomColors.customSwatchColor,
-                        ),
-                      ),
-                      Text(
-                        '/${item.unit}',
-                        style: const TextStyle(
-                          fontSize: 13,
-                        ),
-                      ),
-                    ],
+                  Text(
+                    item.itemName,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
                   ),
-                )
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text(
+                          utils.priceToCurrency(item.price),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: CustomColors.customSwatchColor,
+                          ),
+                        ),
+                        Text(
+                          '/${item.unit}',
+                          style: const TextStyle(
+                            fontSize: 13,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

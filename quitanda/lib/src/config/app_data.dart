@@ -11,7 +11,7 @@ ItemModel apple = ItemModel(
 ItemModel apple1 = ItemModel(
   itemName: 'Mamão',
   imgUrl: 'assets/fruits/papaya.png',
-  unit: 'kg',
+  unit: 'Un',
   price: 5.99,
   description: 'Mamão do bom',
 );
