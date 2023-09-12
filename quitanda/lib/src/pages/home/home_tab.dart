@@ -91,7 +91,7 @@ class _HomeTabState extends State<HomeTab> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 3),
+            padding: const EdgeInsets.symmetric(horizontal: 13),
             height: 40,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,

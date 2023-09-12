@@ -12,6 +12,4 @@ class ItemModel {
     required this.price,
     required this.description,
   });
-
-
 }

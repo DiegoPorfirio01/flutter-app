@@ -71,7 +71,9 @@ class _ProductScreenState extends State<ProductScreen> {
                             result: (int quantity) {
                               setState(() {
                                 cartItemQuantity = quantity;
-                              });                            },
+                              });
+                            },
+                            isRemovable: true,
                           ),
                         ],
                       ),
