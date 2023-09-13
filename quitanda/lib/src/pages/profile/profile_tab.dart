@@ -25,7 +25,7 @@ class _ProfileTabState extends State<ProfileTab> {
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.fromLTRB(16, 32, 16, 16),
+        padding: const EdgeInsets.fromLTRB(16, 32, 16, 16),
         children: [
           CustomTextField(
             readOnly: true,
@@ -97,8 +97,8 @@ class _ProfileTabState extends State<ProfileTab> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           textAlign: TextAlign.center,
                           'Alterar Senha',
@@ -106,17 +106,17 @@ class _ProfileTabState extends State<ProfileTab> {
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       ),
-                      CustomTextField(
+                      const CustomTextField(
                         icon: Icons.lock,
                         label: 'Senha Atual',
                         isSecret: true,
                       ),
-                      CustomTextField(
+                      const CustomTextField(
                         icon: Icons.lock,
                         label: 'Nova Senha',
                         isSecret: true,
                       ),
-                      CustomTextField(
+                      const CustomTextField(
                         icon: Icons.lock,
                         label: 'Confirme Nova Senha',
                         isSecret: true,
