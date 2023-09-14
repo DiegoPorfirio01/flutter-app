@@ -1,5 +1,6 @@
 import 'package:quitanda/src/models/cart_item_model.dart';
 import 'package:quitanda/src/models/item_model.dart';
+import 'package:quitanda/src/models/order_model.dart';
 import 'package:quitanda/src/models/user_model.dart';
 
 ItemModel apple = ItemModel(
@@ -102,3 +103,61 @@ final UserModel user = UserModel(
   telefone: '99 9 9999-9999',
   senha: '',
 );
+
+List<OrderModel> orders = [
+  OrderModel(
+    id: '1',
+    createdAt: DateTime.now(),
+    overDueDateTime: DateTime.now().add(const Duration(days: 2)),
+    status: 'delivered',
+    copyAndPaste: 'H5Hk89',
+    total: 100.00,
+    items: [
+      CartItemModel(
+        item: apple,
+        quantity: 2,
+      ),
+      CartItemModel(
+        item: apple1,
+        quantity: 2,
+      ),
+    ],
+  ),
+   OrderModel(
+    id: '3',
+    createdAt: DateTime.now(),
+    overDueDateTime: DateTime.now().add(const Duration(days: 2)),
+    status: 'pending_payment',
+    copyAndPaste: 'H5Hk89',
+    total: 100.00,
+    items: [
+      CartItemModel(
+        item: apple,
+        quantity: 2,
+      ),
+      CartItemModel(
+        item: apple1,
+        quantity: 2,
+      ),
+    ],
+  ),
+
+  OrderModel(
+    id: '2',
+    createdAt: DateTime.now(),
+    overDueDateTime: DateTime.now(),
+    status: 'refused',
+    copyAndPaste: 'H5Hk89',
+    total: 100.00,
+    items: [
+      CartItemModel(
+        item: apple2,
+        quantity: 2,
+      ),
+      CartItemModel(
+        item: apple3,
+        quantity: 2,
+      ),
+    ],
+  ),
+];
